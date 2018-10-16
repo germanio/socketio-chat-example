@@ -25,6 +25,14 @@
         socket.on('chat message', (msg) => {
           $('#messages').append($('<li>').text(msg));
         });
+
+        socket.on('a user connected', () => {
+          $('#messages').append($('<li>').text('a user connected'));
+        });
+
+        socket.on('a user disconnected', () => {
+          $('#messages').append($('<li>').text('a user disconnected'));
+        });
       });
     </script>
   </head>
