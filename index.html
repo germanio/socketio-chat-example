@@ -27,6 +27,7 @@
         $('form').submit(() => {
           const message = { user: nick, text: $('#m').val() };
           socket.emit('chat message', message);
+          $('#messages').append($('<li>').text(`You wrote: ${message.text}`));
           $('#m').val('');
           return false;
         });
