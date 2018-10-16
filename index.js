@@ -13,9 +13,15 @@ io.on('connection', (socket) => {
   socket.broadcast.emit('a user connected');
 
   socket.on('chat message', (msg) => {
-    console.log(`message: ${msg}`);
+    console.log(`${msg.user} wrote: ${msg.text}`);
     io.emit('chat message', msg);
   });
+
+  socket.on('nick set', (nickChange) => {
+    console.log(`${nickChange.oldNick} set a new nick: ${nickChange.newNick}`);
+    socket.broadcast.emit('nick set', nickChange);
+  });
+
   socket.on('disconnect', () => {
     console.log('a user disconnected');
     socket.broadcast.emit('a user disconnected');
