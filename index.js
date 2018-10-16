@@ -22,6 +22,11 @@ io.on('connection', (socket) => {
     socket.broadcast.emit('nick set', nickChange);
   });
 
+  socket.on('writing', (event) => {
+    console.log(`${event.user} is writing`);
+    socket.broadcast.emit('writing', event);
+  });
+
   socket.on('disconnect', () => {
     console.log('a user disconnected');
     socket.broadcast.emit('a user disconnected');
