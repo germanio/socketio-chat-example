@@ -1,0 +1,21 @@
+{
+  "name": "socketio-chat-example",
+  "version": "1.0.0",
+  "description": "The official example in socket.io page (Getting Started)",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "socket.io",
+    "nodejs",
+    "example",
+    "express"
+  ],
+  "author": "@germanio",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.16.4",
+    "socket.io": "^2.1.1"
+  }
+}
